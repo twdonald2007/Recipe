@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>預算食譜推薦 | CookBook</title>
+  <meta name="description" content="輸入預算即可挑選 100 筆精選食譜，並匯出到 data.json。" />
+  <link rel="stylesheet" href="./css/index.css" />
+  <link rel="stylesheet" href="./css/budget.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav" role="navigation" aria-label="主導覽">
+      <a class="brand" href="./index.html" aria-label="返回首頁">
+        <span class="brand__logo" aria-hidden="true"></span>
+        <span>CookBook</span>
+      </a>
+      <nav class="nav__links">
+        <a class="nav__link" href="./index.html">首頁</a>
+        <a class="nav__link" aria-current="page" href="#">預算助手</a>
+        <a class="nav__link" href="./recipe.html">播放器</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section budget-hero">
+      <div class="container hero__wrap budget-hero__wrap">
+        <div>
+          <p class="eyebrow">用月底了，自己煮就是便宜</p>
+          <h1 class="hero__title">輸入預算，選一份省錢又飽足的食譜</h1>
+          <p class="hero__sub">系統會從 100 筆附近食譜中挑出符合預算的選項，選取後可立即匯出到 <code>json/data.json</code>。</p>
+          <form id="budgetForm" class="budget-form" aria-label="預算搜尋">
+            <label class="sr-only" for="budgetInput">輸入預算</label>
+            <div class="input-group">
+              <input id="budgetInput" name="budget" type="number" min="50" step="10" placeholder="例如：150" required />
+              <span class="suffix">元/份</span>
+            </div>
+            <button class="search__btn" type="submit">依預算推薦</button>
+          </form>
+          <p class="form-hint">資料來源：<strong>json/budget_recipes.json</strong>（共 <span id="totalCount">0</span> 筆）</p>
+        </div>
+        <div class="budget-illustration" aria-hidden="true">
+          <div class="badge">100 筆資料</div>
+          <div class="bubble">自動生成 data.json</div>
+          <div class="circle"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container budget-grid">
+        <div class="panel">
+          <div class="panel__head">
+            <h2>推薦結果</h2>
+            <div class="panel__meta"><span id="resultCount">0</span> 筆符合預算</div>
+          </div>
+          <div id="resultList" class="result-list" role="list"></div>
+        </div>
+
+        <div class="panel">
+          <div class="panel__head">
+            <h2>食譜細節</h2>
+            <div class="panel__meta" id="selectionMeta">請先選擇食譜</div>
+          </div>
+          <div id="recipeDetail" class="detail">
+            <p class="muted">輸入預算並挑選左側的食譜，詳細資訊會顯示在這裡。</p>
+          </div>
+          <div class="panel__footer">
+            <button id="writeBtn" class="btn" type="button" disabled>寫入 data.json</button>
+            <a id="downloadLink" class="btn btn--ghost" href="#" download="data.json" aria-disabled="true">下載 data.json</a>
+          </div>
+          <div class="json-preview">
+            <div class="json-preview__head">寫入預覽</div>
+            <pre id="jsonOutput" aria-live="polite">[]</pre>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container foot">
+      <div>© 2025 CookBook</div>
+      <div>
+        <a href="./index.html">返回首頁</a> ·
+        <a href="./recipe.html">食譜播放器</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./js/budget.js"></script>
+</body>
+</html>
