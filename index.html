@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CookBook — 食譜首頁</title>
+  <meta name="description" content="簡潔好用的食譜搜尋與收藏首頁" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="./css/index.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="nav" role="navigation" aria-label="主導覽">
+      <a class="brand" href="#" aria-label="CookBook 首頁">
+        <span class="brand__logo" aria-hidden="true"></span>
+        <span>CookBook</span>
+      </a>
+      <nav class="nav__links">
+        <a class="nav__link" aria-current="page" href="#">首頁</a>
+        <a class="nav__link" href="#popular">熱門</a>
+        <a class="nav__link" href="#categories">分類</a>
+        <a class="nav__link" href="#about">關於</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Bottom Nav (寬度 >600px 顯示) -->
+  <nav class="bottom-nav" aria-label="底部功能列">
+    <div class="container bottom-nav__inner">
+      <a class="bn-item" aria-current="page" href="#"><span class="bn-item__icon">🏠</span>首頁</a>
+      <a class="bn-item" href="#search"><span class="bn-item__icon">🔍</span>搜尋</a>
+      <a class="bn-item" href="#recipes"><span class="bn-item__icon">🍳</span>食譜</a>
+      <a class="bn-item" href="#favorites"><span class="bn-item__icon">⭐</span>收藏</a>
+      <a class="bn-item" href="#account"><span class="bn-item__icon">👤</span>帳號</a>
+    </div>
+  </nav>
+
+  <!-- Main -->
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero__wrap">
+        <div>
+          <h1 class="hero__title">搜尋、發現、收藏你的下一道拿手菜</h1>
+          <p class="hero__sub">支援關鍵字與食材組合查找。例如：<code>雞胸</code>、<code>15 分鐘</code>、<code>無麩質</code>。</p>
+          <form class="search" role="search" aria-label="食譜搜尋">
+            <label class="sr-only" for="q">搜尋食譜</label>
+            <input class="search__input" id="q" name="q" type="search" placeholder="輸入關鍵字或食材，例如：番茄義大利麵" />
+            <button class="search__btn" type="submit">搜尋</button>
+          </form>
+          <p class="search__hint chips">快速標籤：
+            <a class="chip" href="#">15 分鐘</a>
+            <a class="chip" href="#">學生省錢</a>
+            <a class="chip" href="#">低卡</a>
+            <a class="chip" href="#">無麩質</a>
+          </p>
+        </div>
+        <div class="hero__image"><img src="./chicken.png" alt=""></div>
+      </div>
+    </section>
+
+    <!-- 功能 -->
+    <section id="function" class="section">
+      <div class="container">
+        <h2 class="card__title">熱門功能</h2>
+        <div class="fxgrid grid">
+          <article class="card">
+            <div class="fx_card__media" aria-hidden="true"></div>
+            <div class="fx_card__body">
+              <h3 class="card__title"> 把剩下的食材整理食譜吧</h3>
+              <p>依現有食材生成可做菜單</p>
+            </div>
+          </article>
+          <article class="card">
+            <div class="fx_card__media" aria-hidden="true"></div>
+            <div class="fx_card__body">
+              <h3 class="card__title"> 缺料不用急著出門</h3>
+              <p>自動匹配可替代食材</p>
+            </div>
+          </article>
+          <article class="card">
+            <div class="fx_card__media" aria-hidden="true"></div>
+            <div class="fx_card__body">
+              <h3 class="card__title"> 在家也能吃到外面的味道</h3>
+              <p>逆向工程：拍個照讓ai分析成食材與食譜</p>
+            </div>
+          </article>
+          <article class="card">
+            <div class="fx_card__media" aria-hidden="true"></div>
+            <div class="fx_card__body">
+              <h3 class="card__title">用月底了,自己煮就是便宜</h3>
+              <p>輸入預算開銷推薦食譜</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Categories -->
+    <section id="categories" class="section">
+      <div class="container">
+        <h2 class="section__title">分類</h2>
+        <div class="chips" role="list">
+          <a class="chip" role="listitem" href="#">早餐</a>
+          <a class="chip" role="listitem" href="#">午餐</a>
+          <a class="chip" role="listitem" href="#">晚餐</a>
+          <a class="chip" role="listitem" href="#">甜點</a>
+          <a class="chip" role="listitem" href="#">飲品</a>
+          <a class="chip" role="listitem" href="#">素食</a>
+          <a class="chip" role="listitem" href="#">快速料理</a>
+          <a class="chip" role="listitem" href="#">健康餐</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Popular -->
+    <section id="popular" class="section">
+      <div class="container">
+        <h2 class="card__title">熱門食譜</h2>
+        <div class="grid">
+          <!-- 卡片 1 -->
+          <article class="card">
+            <div class="card__media" aria-hidden="true"></div>
+            <div class="card__body">
+              <h3 class="card__title">蒜香奶油蝦義大利麵</h3>
+              <div class="meta">
+                <span class="tag">20 分鐘</span>
+                <span class="tag">中等</span>
+                <span class="tag">晚餐</span>
+              </div>
+            </div>
+          </article>
+          <!-- 卡片 2 -->
+          <article class="card">
+            <div class="card__media" aria-hidden="true"></div>
+            <div class="card__body">
+              <h3 class="card__title">燕麥優格水果杯</h3>
+              <div class="meta">
+                <span class="tag">10 分鐘</span>
+                <span class="tag">容易</span>
+                <span class="tag">早餐</span>
+              </div>
+            </div>
+          </article>
+          <!-- 卡片 3 -->
+          <article class="card">
+            <div class="card__media" aria-hidden="true"></div>
+            <div class="card__body">
+              <h3 class="card__title">青醬雞胸沙拉</h3>
+              <div class="meta">
+                <span class="tag">15 分鐘</span>
+                <span class="tag">容易</span>
+                <span class="tag">健康</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter / CTA -->
+    <section class="section newsletter">
+      <div class="container">
+        <h2 class="section__title">每週新食譜快報</h2>
+        <div class="cta">
+          <div class="cta__row">
+            <input type="email" placeholder="輸入你的 Email" aria-label="Email" />
+            <button type="button">訂閱</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container foot">
+      <div>© 2025 CookBook</div>
+      <div>
+        <a href="#">關於</a> ·
+        <a href="#">聯絡</a> ·
+        <a href="#">條款</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
